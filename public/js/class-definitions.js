@@ -3,8 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-
-
+var unicorn;
 /* Step 2
  *
  * Declare a variable named "videogame_system"
@@ -12,7 +11,7 @@
  *
  */
 
-
+var videogame_system = "Atari";
 /* Step 3
  *
  * Declare a variable named "sahara_animal"
@@ -20,7 +19,7 @@
  *
  */
 
-
+var sahara_animal = "The Addax";
 /* Step 4
  *
  * Declare a variable named "planets"
@@ -29,7 +28,7 @@
  *
  */
 
-
+var planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"];
 
 /* Step 5
  *
@@ -39,7 +38,7 @@
  *
  */
 
-
+var galilean_moons = ["io", "europa", "ganymede", "callisto"];
 
 /* Step 6 φ
  *
@@ -48,7 +47,7 @@
  *
  */
 
-
+var golden_ratio = 1.61803398874;
 
 /* Step 7
  *
@@ -57,7 +56,7 @@
  *
  */
 
-
+var earths_water_composition = 0.71;
 /* Step 8
  *
  * Declare a variable named "club_name"
@@ -65,7 +64,7 @@
  *
  */
 
-
+var club_name = "Fight Club";
 
 /* Step 9
  *
@@ -77,7 +76,11 @@
  *   unknown => undefined
  */
 
-
+var Gender = {
+	female: "female",
+	male: "male",
+	unknown: undefined
+};
 
 /* Step 10
  *
@@ -92,7 +95,12 @@
  * 
  */
 
-
+var princess_leia = {
+	name: "Leia Organa",
+	money: 890,
+	age: 20,
+	gender: Gender.female
+};
 
 
 /* Step 11
@@ -107,7 +115,12 @@
  * 
  */
 
-
+var domains = {
+	"ycombinator.com": "198.41.190.47",
+	"laughingsquid.com": "162.159.247.97",
+	"slumlordhosting.com": "198.61.179.126",
+	"jsonformatter.curiousconcept.com": "104.28.5.70"
+};
 
 
 /* Step 12
@@ -126,7 +139,16 @@
  * 
  */
 
-
+var browsers = {
+	Chrome: "google",
+	Chromium: "google",
+	Safari: "apple",
+	Opera: "opera",
+	Firefox: "mozilla",
+	Sleipnir: "fenrir",
+	Konqueror: "KDE",
+	Links: "GPLv2+"
+};
 
 
 /* Step 13
@@ -146,8 +168,18 @@
  *
  */
 
-
-
+var rainbow = {
+	colors: {
+		red: "#F0280A",
+		orange: "#FF8800",
+		yellow: "#FFDD00",
+		green: "#51AB0C",
+		blue: "#1593ED",
+		indigo: "#5215ED",
+		violet: "#A915ED"
+	},
+	isDouble: true
+}
 /* Step 14
  *
  * WIP
@@ -251,7 +283,9 @@
  *
  */
 
-
+function sahara_river () {
+	return "Nile River";
+}
 /* Step 21
  *
  * Define a functions object
@@ -468,55 +502,81 @@
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
-
+function Animal (species, gender) {
+	this.species = species;
+	this.gender = gender;
+}
 /**
  * Vehicle class
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-
+function Vehicle (make, model) {
+	this.make = make;
+	this.model = model;
+}
 /**
  * Shape class
  * @param {number} sides The number of sides, should be greater than 3
  */
-
+function Shape (sides) {
+	if (sides >= 3) {
+		this.sides = sides;
+	}
+}
 /**
  * Box class
  * @param {anything} contents The contents of the box
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
-
+function Box (contents, isOpen) {
+	this.contents = contents;
+	this.isOpen = isOpen;
+}
 /**
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-
+function Door (isOpen) {
+	this.isOpen = isOpen;
+}
 /**
  * Shoe class
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-
+function Shoe (size, color) {
+	this.size = size;
+	this.color = color;
+}
 /**
  * House class
  * @param {number} stories How many stories tall the house is
  */
-
+function House (stories) {
+	this.stories = stories;
+}
 /**
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-
+function Lightbulb (isOn) {
+	this.isOn = isOn;
+}
 /**
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-
+function Cookie (flavor) {
+	this.flavor = flavor;
+}
 /**
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
-
+function Meal (foods) {
+	this.foods = foods;
+}
 /* Step 60
  *
  * Create a new instance of
@@ -524,44 +584,45 @@
  */
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal("Monkey", "male");
+var nemo = new Animal("Fish", "male");
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle("Honda", "Civic");
+var forte = new Vehicle("KIA", "Forte");
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+var hexagon = new Shape(6);
 
 // Create 2 boxes
-var catBox;
-var christmasPresent;
+var cat = new Animal("Cat", "male");
+var catBox = new Box(cat, true);
+var christmasPresent = new Box("contents", false);
 
 // Create 2 doors
-var automaticDoor;
-var bankVault;
+var automaticDoor = new Door(true);
+var bankVault = new Door(false);
 
 // Create 2 shoes
-var rubySlippers;
-var dressShoes;
+var rubySlippers = new Shoe(7, "red");
+var dressShoes = new Shoe(10, "black");
 
 // Create 2 houses
-var singleStory;
-var twoStory;
+var singleStory = new House(1);
+var twoStory = new House(2);
 
 // Create 2 lightbulbs
-var incandescent;
-var halogen;
+var incandescent = new Lightbulb(true);
+var halogen = new Lightbulb(false);
 
 // Create 2 cookies of different flavors
-var chocolateChip;
-var gingerbread;
+var chocolateChip = new Cookie("chocolate");
+var gingerbread = new Cookie("gingerbread");
 
 // Create 2 different meals
-var breakfast;
-var dinner;
+var breakfast = new Meal("cereal" + "milk");
+var dinner = new Meal("fish" + "vegetables");
 
 /* Step 80
  *
